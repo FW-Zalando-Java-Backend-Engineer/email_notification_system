@@ -19,7 +19,8 @@ public class EmailNotificationApp {
         );
 
         // Creating an array of threads, empty but same size of Recipient List
-        Thread[] threads = new Thread[recipients.size()];
+        Thread[] threads = new Thread[recipients.size()]; // [null, null, null, null, null]
+
 
         for (int i = 0; i < recipients.size(); i++) {
             // Creating an EmailSender instance for each recipient:
@@ -29,15 +30,21 @@ public class EmailNotificationApp {
             threads[i] = new Thread(sender, "EmailThread-"+(i+1)); // A new Thread is wrapped around it.
             // A custom thread name is assigned (EmailThread-1, etc.) — great for debugging/logs!
 
-            threads[i].start(); // is called → launches each email in its own thread.
+           // threads[i].start(); // is called → launches each email in its own thread.
             // This makes the email sending concurrent. All emails are being "sent" (simulated) in parallel.
 
         }
 
+        for (int i = 0; i < threads.length; i++) {
+            threads[i].start(); // is called → launches each email in its own thread.
+        }
+
+
         // Waiting for Threads to Finish : using join().
 
         for (Thread thread : threads){
-            try{
+            // thread.start() - keep the order
+           try{
                 // join() blocks the main thread until the child thread completes.
                 thread.join();
             } catch (InterruptedException e) {
