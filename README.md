@@ -40,9 +40,9 @@ EmailNotificationSystem/
 │           ├── EmailSender.java
 │           └── EmailNotificationApp.java
 └── test/
-└── java/
-    └── org/example/email/
-        └── EmailSenderTest.java
+    └── java/
+        └── org/example/email/
+            └── EmailSenderTest.java
 
 ````
 
