@@ -36,13 +36,13 @@ EmailNotificationSystem/
 └── src/
 ├── main/
 │   └── java/
-│       └── com/example/email/
+│       └── org/example/email/
 │           ├── EmailSender.java
 │           └── EmailNotificationApp.java
 └── test/
 └── java/
-└── com/example/email/
-└── EmailSenderTest.java
+    └── org/example/email/
+        └── EmailSenderTest.java
 
 ````
 
